@@ -1,0 +1,249 @@
+# TEMPLATE EXCEL MULTI-FEUILLES
+# Pour créer un fichier Excel avec plusieurs feuilles, utilisez ce template
+
+FEUILLE 1 - "FACTURES"
+mois,date,heureDebut,heureFin,campus,filiere,classe,intitule,retard,quantite,prixUnitaire,totalTTC
+février 2026,mardi 3 février 2026,09:00,12:00,Roquette,BTS,1ère année,Cours de mathématiques,0,3,60,180
+février 2026,mercredi 4 février 2026,14:00,17:00,Douai,BTS,2ème année,Cours de français,0,3,60,180
+février 2026,jeudi 5 février 2026,10:00,12:00,Picpus,BTS,1ère année,Cours d'anglais,0,2,60,120
+
+FEUILLE 2 - "PERSONNEL"  
+email,first_name,last_name,role,campus_name
+prof.nouveau1@aurlom.com,Jean,Dupont,ENSEIGNANT,Roquette
+directeur.nouveau@aurlom.com,Marie,Martin,DIRECTEUR_CAMPUS,Douai
+comptable.nouveau@aurlom.com,Pierre,Bernard,COMPTABLE,
+
+FEUILLE 3 - "GUIDE"
+GUIDE D'IMPORT - PLATEFORME AURLOM
+=====================================
+
+📋 IMPORT DES FACTURES/PRESTATIONS
+==================================
+
+FORMAT ATTENDU:
+- Fichier CSV avec encodage UTF-8
+- Séparateur: virgule (,)
+- Première ligne: en-têtes des colonnes
+- Lignes suivantes: données des prestations
+
+COLONNES OBLIGATOIRES:
+1. mois: Mois et année (ex: "février 2026")
+2. date: Date complète avec jour de la semaine (ex: "mardi 3 février 2026")
+3. heureDebut: Heure de début au format HH:MM (ex: "09:00")
+4. heureFin: Heure de fin au format HH:MM (ex: "12:00")
+5. campus: Nom exact du campus (voir feuille Légende)
+6. filiere: Filière d'enseignement (ex: "BTS", "Prépa", "Formation")
+7. classe: Nom de la classe (ex: "1ère année", "2ème année")
+8. intitule: Titre du cours (ex: "Cours de mathématiques")
+9. retard: Nombre d'heures de retard (0 si aucun)
+10. quantite: Nombre d'heures de cours (calculé automatiquement si vide)
+11. prixUnitaire: Tarif horaire en euros (ex: "60")
+12. totalTTC: Montant total TTC en euros (calculé automatiquement si vide)
+
+CONTRAINTES:
+- Les heures doivent être au format HH:MM (24h)
+- Les montants doivent être des nombres (pas de € ou d'espaces)
+- Le campus doit exister dans la base de données
+- La date doit être valide et dans le futur
+
+📋 IMPORT DU PERSONNEL
+======================
+
+FORMAT ATTENDU:
+- Fichier CSV avec encodage UTF-8
+- Séparateur: virgule (,)
+- Première ligne: en-têtes des colonnes
+- Lignes suivantes: données du personnel
+
+COLONNES OBLIGATOIRES:
+1. email: Adresse email valide et unique
+2. first_name: Prénom de la personne
+3. last_name: Nom de famille
+4. role: Rôle dans l'organisation (voir feuille Légende)
+5. campus_name: Nom du campus d'assignation (optionnel sauf pour DIRECTEUR_CAMPUS)
+
+CONTRAINTES:
+- L'email doit être unique et valide
+- Le rôle doit être un des rôles autorisés
+- Un directeur de campus doit être assigné à un campus
+- Un mot de passe temporaire sera généré automatiquement
+
+⚠️  ERREURS COMMUNES À ÉVITER:
+==============================
+- Fichier avec encodage incorrect (utiliser UTF-8)
+- Séparateurs incorrects (utiliser des virgules, pas de points-virgules)
+- Dates au mauvais format
+- Noms de campus inexistants
+- Emails déjà utilisés
+- Rôles non reconnus
+- Montants avec des caractères non numériques
+
+✅ CONSEILS POUR UN IMPORT RÉUSSI:
+==================================
+1. Vérifiez que tous les noms de campus existent
+2. Utilisez des dates cohérentes et dans le futur
+3. Respectez les formats d'heures HH:MM
+4. Testez avec un petit fichier avant un import massif
+5. Sauvegardez vos données avant l'import
+6. Vérifiez les résultats après l'import
+
+📞 SUPPORT:
+===========
+En cas de problème, contactez l'équipe technique:
+- Email: support@aurlom.com
+- Téléphone: 01 44 82 65 67
+
+FEUILLE 4 - "LÉGENDE"
+LÉGENDE - RÔLES ET CAMPUS AURLOM
+===============================
+
+👥 RÔLES DISPONIBLES:
+=====================
+
+SUPER_ADMIN:
+- Accès complet à toute la plateforme
+- Gestion des utilisateurs et campus
+- Validation finale des factures
+- Accès aux rapports globaux
+- Peut tout voir et modifier
+
+COMPTABLE:
+- Gestion des factures et paiements
+- Validation des factures prévalidées
+- Accès aux rapports financiers
+- Gestion des campus
+- Ne peut pas modifier les rôles
+
+DIRECTEUR_CAMPUS:
+- Gestion de son campus uniquement
+- Prévalidation des factures de son campus
+- Gestion des professeurs de son campus
+- Accès aux rapports de son campus
+- Doit être assigné à un campus
+
+ENSEIGNANT:
+- Création et gestion de ses factures
+- Consultation de ses prestations
+- Accès à ses statistiques personnelles
+- Peut être assigné à un campus (optionnel)
+- Ne peut pas voir les données des autres
+
+🏢 CAMPUS DISPONIBLES:
+======================
+
+1. ROQUETTE
+   - Adresse: 48 rue de la Roquette, 75011 Paris
+   - Spécialités: BTS, Formations courtes
+   - Capacité: 150 étudiants
+
+2. DOUAI
+   - Adresse: Centre de formation Douai
+   - Spécialités: BTS, Préparations
+   - Capacité: 120 étudiants
+
+3. PICPUS
+   - Adresse: Campus Picpus, Paris 12ème
+   - Spécialités: BTS, Formations professionnelles
+   - Capacité: 100 étudiants
+
+4. JAURÈS
+   - Adresse: Campus Jaurès, Paris 19ème
+   - Spécialités: Préparations, Formations longues
+   - Capacité: 200 étudiants
+
+5. PARMENTIER
+   - Adresse: Campus Parmentier, Paris 11ème
+   - Spécialités: BTS, Formations techniques
+   - Capacité: 80 étudiants
+
+6. SAINT-SÉBASTIEN
+   - Adresse: Campus Saint-Sébastien, Paris 11ème
+   - Spécialités: Formations courtes, Certifications
+   - Capacité: 60 étudiants
+
+7. BOULOGNE
+   - Adresse: Campus Boulogne-Billancourt
+   - Spécialités: BTS, Formations professionnelles
+   - Capacité: 90 étudiants
+
+8. SENTIER
+   - Adresse: Campus Sentier, Paris 2ème
+   - Spécialités: Formations courtes, Spécialisations
+   - Capacité: 70 étudiants
+
+📊 STATUTS DES FACTURES:
+========================
+
+SUBMITTED (Soumis):
+- Facture créée par l'enseignant
+- En attente de prévalidation par le directeur
+- Peut être modifiée par l'enseignant
+
+PREVALIDATED (Prévalidé):
+- Prévalidée par le directeur de campus
+- En attente de validation par la comptabilité
+- Ne peut plus être modifiée
+
+VALIDATED (Validé):
+- Validée par la comptabilité
+- En attente de paiement
+- Prête pour le processus de paiement
+
+PAID (Payé):
+- Facture payée
+- Processus terminé
+- Visible dans les rapports
+
+REJECTED (Rejeté):
+- Facture rejetée (directeur ou comptabilité)
+- Doit être corrigée par l'enseignant
+- Peut être resoumise après correction
+
+💰 TARIFS ET MONTANTS:
+======================
+
+TARIF HORAIRE STANDARD:
+- Enseignant standard: 60€/h
+- Enseignant senior: 70€/h
+- Intervenant spécialisé: 80€/h
+
+CALCULS AUTOMATIQUES:
+- Quantité = heureFin - heureDebut (en heures)
+- TotalTTC = quantite × prixUnitaire
+- Montant HT = TotalTTC / 1.20 (TVA 20%)
+
+⚠️  CONTRAINTES IMPORTANTES:
+============================
+
+RÔLES:
+- Un utilisateur ne peut avoir qu'un seul rôle
+- Un directeur ne peut gérer qu'un seul campus
+- Un enseignant peut enseigner sur plusieurs campus
+
+CAMPUS:
+- Un campus ne peut avoir qu'un seul directeur
+- Les noms de campus sont sensibles à la casse
+- Les campus ne peuvent pas être supprimés s'ils ont des données
+
+FACTURES:
+- Une facture ne peut être modifiée que si elle est "SUBMITTED"
+- Les dates de cours doivent être dans le futur
+- Les heures de cours doivent être cohérentes (fin > début)
+
+SÉCURITÉ:
+- Tous les imports sont tracés dans les logs d'audit
+- Les mots de passe temporaires expirent après 7 jours
+- Les accès sont contrôlés par Row Level Security (RLS)
+
+📞 CONTACT SUPPORT:
+==================
+Pour toute question sur les rôles, campus ou contraintes:
+- Email: support@aurlom.com
+- Téléphone: 01 44 82 65 67
+- Documentation: https://docs.aurlom.com
+
+# Instructions pour créer le fichier Excel:
+# 1. Ouvrez Excel ou LibreOffice Calc
+# 2. Créez 4 feuilles nommées: "FACTURES", "PERSONNEL", "GUIDE", "LÉGENDE"
+# 3. Copiez le contenu correspondant dans chaque feuille
+# 4. Sauvegardez en format .xlsx

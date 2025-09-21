@@ -1,0 +1,19 @@
+{
+  "name": "aurlom-scripts",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'This is the scripts directory. Run npm run dev from the root directory.'",
+    "create-test-accounts": "tsx create-test-accounts.ts",
+    "reset-test-data": "tsx reset-test-data.ts",
+    "create-complete-test-data": "tsx create-complete-test-data.ts",
+    "test-workflows": "tsx test-workflows.ts",
+    "test-pov": "tsx test-pov-permissions.ts",
+    "test-workflow-complete": "tsx test-workflow-complete.ts",
+    "test-campus-isolation": "tsx test-campus-isolation.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.2",
+    "tsx": "^4.7.0"
+  }
+}

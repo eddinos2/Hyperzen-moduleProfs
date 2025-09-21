@@ -1,0 +1,29 @@
+# ===========================================
+# CONFIGURATION SUPABASE - PRODUCTION
+# ===========================================
+
+# Copiez ces valeurs dans un fichier .env dans le dossier racine
+
+VITE_SUPABASE_URL=https://tulhrtkpxbmqzwshaojc.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR1bGhydGtwYXhibXF6d3NoYW9jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcyNDQ2NzMsImV4cCI6MjA3MjgyMDY3M30.kNoko1fDezPOeJ6lch5MfcpcTrrigPC4Vw8S-chTewA
+VITE_SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR1bGhydGtwYXhibXF6d3NoYW9jIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NzI0NDY3MywiZXhwIjoyMDcyODIwNjczfQ.bTBnYr3ANqfEVJ3YYC2SuapE-MYzy_KiXIv16Ef48nU
+
+# ===========================================
+# CONFIGURATION APPLICATION
+# ===========================================
+
+VITE_APP_NAME=Aurlom BTS+ - Gestion Professeurs
+VITE_COMPANY_NAME=AURLOM PREPA SARL
+VITE_COMPANY_ADDRESS=48 rue de la Roquette, 75011 Paris
+VITE_COMPANY_PHONE=01 44 82 65 67
+VITE_COMPANY_EMAIL=info@aurlom.com
+VITE_DEBUG_MODE=true
+VITE_APP_URL=http://localhost:5173
+
+# ===========================================
+# INSTRUCTIONS
+# ===========================================
+
+# 1. Créez un fichier .env dans le dossier racine
+# 2. Copiez tout le contenu ci-dessus dans le fichier .env
+# 3. Redémarrez l'application avec : npm run dev

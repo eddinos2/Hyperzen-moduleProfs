@@ -1,0 +1,147 @@
+LÉGENDE - RÔLES ET CAMPUS AURLOM
+===============================
+
+👥 RÔLES DISPONIBLES:
+=====================
+
+SUPER_ADMIN:
+- Accès complet à toute la plateforme
+- Gestion des utilisateurs et campus
+- Validation finale des factures
+- Accès aux rapports globaux
+- Peut tout voir et modifier
+
+COMPTABLE:
+- Gestion des factures et paiements
+- Validation des factures prévalidées
+- Accès aux rapports financiers
+- Gestion des campus
+- Ne peut pas modifier les rôles
+
+DIRECTEUR_CAMPUS:
+- Gestion de son campus uniquement
+- Prévalidation des factures de son campus
+- Gestion des professeurs de son campus
+- Accès aux rapports de son campus
+- Doit être assigné à un campus
+
+ENSEIGNANT:
+- Création et gestion de ses factures
+- Consultation de ses prestations
+- Accès à ses statistiques personnelles
+- Peut être assigné à un campus (optionnel)
+- Ne peut pas voir les données des autres
+
+🏢 CAMPUS DISPONIBLES:
+======================
+
+1. ROQUETTE
+   - Adresse: 48 rue de la Roquette, 75011 Paris
+   - Spécialités: BTS, Formations courtes
+   - Capacité: 150 étudiants
+
+2. DOUAI
+   - Adresse: Centre de formation Douai
+   - Spécialités: BTS, Préparations
+   - Capacité: 120 étudiants
+
+3. PICPUS
+   - Adresse: Campus Picpus, Paris 12ème
+   - Spécialités: BTS, Formations professionnelles
+   - Capacité: 100 étudiants
+
+4. JAURÈS
+   - Adresse: Campus Jaurès, Paris 19ème
+   - Spécialités: Préparations, Formations longues
+   - Capacité: 200 étudiants
+
+5. PARMENTIER
+   - Adresse: Campus Parmentier, Paris 11ème
+   - Spécialités: BTS, Formations techniques
+   - Capacité: 80 étudiants
+
+6. SAINT-SÉBASTIEN
+   - Adresse: Campus Saint-Sébastien, Paris 11ème
+   - Spécialités: Formations courtes, Certifications
+   - Capacité: 60 étudiants
+
+7. BOULOGNE
+   - Adresse: Campus Boulogne-Billancourt
+   - Spécialités: BTS, Formations professionnelles
+   - Capacité: 90 étudiants
+
+8. SENTIER
+   - Adresse: Campus Sentier, Paris 2ème
+   - Spécialités: Formations courtes, Spécialisations
+   - Capacité: 70 étudiants
+
+📊 STATUTS DES FACTURES:
+========================
+
+SUBMITTED (Soumis):
+- Facture créée par l'enseignant
+- En attente de prévalidation par le directeur
+- Peut être modifiée par l'enseignant
+
+PREVALIDATED (Prévalidé):
+- Prévalidée par le directeur de campus
+- En attente de validation par la comptabilité
+- Ne peut plus être modifiée
+
+VALIDATED (Validé):
+- Validée par la comptabilité
+- En attente de paiement
+- Prête pour le processus de paiement
+
+PAID (Payé):
+- Facture payée
+- Processus terminé
+- Visible dans les rapports
+
+REJECTED (Rejeté):
+- Facture rejetée (directeur ou comptabilité)
+- Doit être corrigée par l'enseignant
+- Peut être resoumise après correction
+
+💰 TARIFS ET MONTANTS:
+======================
+
+TARIF HORAIRE STANDARD:
+- Enseignant standard: 60€/h
+- Enseignant senior: 70€/h
+- Intervenant spécialisé: 80€/h
+
+CALCULS AUTOMATIQUES:
+- Quantité = heureFin - heureDebut (en heures)
+- TotalTTC = quantite × prixUnitaire
+- Montant HT = TotalTTC / 1.20 (TVA 20%)
+
+⚠️  CONTRAINTES IMPORTANTES:
+============================
+
+RÔLES:
+- Un utilisateur ne peut avoir qu'un seul rôle
+- Un directeur ne peut gérer qu'un seul campus
+- Un enseignant peut enseigner sur plusieurs campus
+
+CAMPUS:
+- Un campus ne peut avoir qu'un seul directeur
+- Les noms de campus sont sensibles à la casse
+- Les campus ne peuvent pas être supprimés s'ils ont des données
+
+FACTURES:
+- Une facture ne peut être modifiée que si elle est "SUBMITTED"
+- Les dates de cours doivent être dans le futur
+- Les heures de cours doivent être cohérentes (fin > début)
+
+SÉCURITÉ:
+- Tous les imports sont tracés dans les logs d'audit
+- Les mots de passe temporaires expirent après 7 jours
+- Les accès sont contrôlés par Row Level Security (RLS)
+
+📞 CONTACT SUPPORT:
+==================
+Pour toute question sur les rôles, campus ou contraintes:
+- Email: support@aurlom.com
+- Téléphone: 01 44 82 65 67
+- Documentation: https://docs.aurlom.com

@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Mode clair - Variables HSL */
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 240 5.9% 10%;
+}
+
+.dark {
+  /* Mode sombre - Variables HSL */
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 0 0% 98%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-ui;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-medium;
+  }
+}
+
+@layer components {
+  /* Cards néo-brutalistes */
+  .brutal-border {
+    @apply border-2 border-border rounded-brutal shadow-brutal;
+  }
+  
+  .brutal-card {
+    @apply bg-background brutal-border p-6 transition-all duration-300 ease-out;
+  }
+  
+  .brutal-card:hover {
+    @apply translate-x-1 translate-y-1 shadow-brutal-hover;
+  }
+  
+  /* Boutons néo-brutalistes */
+  .brutal-button {
+    @apply px-4 py-2 border-2 border-border rounded-brutal shadow-brutal font-ui font-medium transition-all duration-300 ease-out;
+  }
+  
+  .brutal-button:hover {
+    @apply translate-x-1 translate-y-1 shadow-brutal-hover scale-105;
+  }
+  
+  .brutal-button:active {
+    @apply translate-x-0 translate-y-0 shadow-none scale-100;
+  }
+  
+  .brutal-button-primary {
+    @apply brutal-button bg-primary text-primary-foreground border-primary;
+  }
+  
+  .brutal-button-secondary {
+    @apply brutal-button bg-secondary text-secondary-foreground border-secondary;
+  }
+  
+  /* Status badges */
+  .brutal-badge {
+    @apply px-3 py-1 border-2 border-border rounded-brutal shadow-brutal font-ui font-medium text-sm;
+  }
+  
+  .brutal-badge-success {
+    @apply brutal-badge bg-green-100 text-green-800 border-green-300;
+  }
+  
+  .brutal-badge-warning {
+    @apply brutal-badge bg-yellow-100 text-yellow-800 border-yellow-300;
+  }
+  
+  .brutal-badge-error {
+    @apply brutal-badge bg-red-100 text-red-800 border-red-300;
+  }
+  
+  .brutal-badge-info {
+    @apply brutal-badge bg-blue-100 text-blue-800 border-blue-300;
+  }
+  
+  /* Inputs */
+  .brutal-input {
+    @apply w-full px-3 py-2 border-2 border-border rounded-brutal shadow-brutal bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring transition-all duration-300 ease-out;
+  }
+  
+  /* Sidebar */
+  .sidebar-mini {
+    @apply w-14;
+  }
+  
+  .sidebar-expanded {
+    @apply w-60;
+  }
+  
+  /* Animations personnalisées */
+  .animate-bounce-gentle {
+    animation: bounce-gentle 2s infinite;
+  }
+  
+  @keyframes bounce-gentle {
+    0%, 20%, 53%, 80%, 100% {
+      transform: translate3d(0,0,0);
+    }
+    40%, 43% {
+      transform: translate3d(0, -8px, 0);
+    }
+    70% {
+      transform: translate3d(0, -4px, 0);
+    }
+    90% {
+      transform: translate3d(0, -2px, 0);
+    }
+  }
+}

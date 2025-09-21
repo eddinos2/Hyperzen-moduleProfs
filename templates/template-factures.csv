@@ -1,0 +1,4 @@
+mois,date,heureDebut,heureFin,campus,filiere,classe,intitule,retard,quantite,prixUnitaire,totalTTC
+février 2026,mardi 3 février 2026,09:00,12:00,Roquette,BTS,1ère année,Cours de mathématiques,0,3,60,180
+février 2026,mercredi 4 février 2026,14:00,17:00,Douai,BTS,2ème année,Cours de français,0,3,60,180
+février 2026,jeudi 5 février 2026,10:00,12:00,Picpus,BTS,1ère année,Cours d'anglais,0,2,60,120

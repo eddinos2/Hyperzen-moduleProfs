@@ -1,0 +1,78 @@
+GUIDE D'IMPORT - PLATEFORME AURLOM
+=====================================
+
+📋 IMPORT DES FACTURES/PRESTATIONS
+==================================
+
+FORMAT ATTENDU:
+- Fichier CSV avec encodage UTF-8
+- Séparateur: virgule (,)
+- Première ligne: en-têtes des colonnes
+- Lignes suivantes: données des prestations
+
+COLONNES OBLIGATOIRES:
+1. mois: Mois et année (ex: "février 2026")
+2. date: Date complète avec jour de la semaine (ex: "mardi 3 février 2026")
+3. heureDebut: Heure de début au format HH:MM (ex: "09:00")
+4. heureFin: Heure de fin au format HH:MM (ex: "12:00")
+5. campus: Nom exact du campus (voir feuille Légende)
+6. filiere: Filière d'enseignement (ex: "BTS", "Prépa", "Formation")
+7. classe: Nom de la classe (ex: "1ère année", "2ème année")
+8. intitule: Titre du cours (ex: "Cours de mathématiques")
+9. retard: Nombre d'heures de retard (0 si aucun)
+10. quantite: Nombre d'heures de cours (calculé automatiquement si vide)
+11. prixUnitaire: Tarif horaire en euros (ex: "60")
+12. totalTTC: Montant total TTC en euros (calculé automatiquement si vide)
+
+CONTRAINTES:
+- Les heures doivent être au format HH:MM (24h)
+- Les montants doivent être des nombres (pas de € ou d'espaces)
+- Le campus doit exister dans la base de données
+- La date doit être valide et dans le futur
+
+📋 IMPORT DU PERSONNEL
+======================
+
+FORMAT ATTENDU:
+- Fichier CSV avec encodage UTF-8
+- Séparateur: virgule (,)
+- Première ligne: en-têtes des colonnes
+- Lignes suivantes: données du personnel
+
+COLONNES OBLIGATOIRES:
+1. email: Adresse email valide et unique
+2. first_name: Prénom de la personne
+3. last_name: Nom de famille
+4. role: Rôle dans l'organisation (voir feuille Légende)
+5. campus_name: Nom du campus d'assignation (optionnel sauf pour DIRECTEUR_CAMPUS)
+
+CONTRAINTES:
+- L'email doit être unique et valide
+- Le rôle doit être un des rôles autorisés
+- Un directeur de campus doit être assigné à un campus
+- Un mot de passe temporaire sera généré automatiquement
+
+⚠️  ERREURS COMMUNES À ÉVITER:
+==============================
+- Fichier avec encodage incorrect (utiliser UTF-8)
+- Séparateurs incorrects (utiliser des virgules, pas de points-virgules)
+- Dates au mauvais format
+- Noms de campus inexistants
+- Emails déjà utilisés
+- Rôles non reconnus
+- Montants avec des caractères non numériques
+
+✅ CONSEILS POUR UN IMPORT RÉUSSI:
+==================================
+1. Vérifiez que tous les noms de campus existent
+2. Utilisez des dates cohérentes et dans le futur
+3. Respectez les formats d'heures HH:MM
+4. Testez avec un petit fichier avant un import massif
+5. Sauvegardez vos données avant l'import
+6. Vérifiez les résultats après l'import
+
+📞 SUPPORT:
+===========
+En cas de problème, contactez l'équipe technique:
+- Email: support@aurlom.com
+- Téléphone: 01 44 82 65 67
